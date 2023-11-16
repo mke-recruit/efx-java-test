@@ -1,6 +1,7 @@
 package fx.price.publisher.services;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import fx.price.publisher.domain.interfaces.PriceAdjustmentService;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Test;
 class CurrentPriceManagerImplTest {
 
 
-  private PriceAdjustmentService noOpPriceAdjustmentService =  x -> x;
+  private final PriceAdjustmentService noOpPriceAdjustmentService =  x -> x;
 
   CurrentPriceManagerImpl underTest;
 
@@ -21,7 +22,7 @@ class CurrentPriceManagerImplTest {
 
   @Test
   void shouldReturnEmpty() {
-    assertThat(underTest.getAllCurrentPrices())
+    assertThat(underTest.getAllCurrentPrices()).isEmpty();
   }
 
 }
