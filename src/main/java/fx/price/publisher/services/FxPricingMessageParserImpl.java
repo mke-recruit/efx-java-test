@@ -16,13 +16,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class FxPricingMessageParserImpl implements FxPricingMessageParser {
 
-  private static final String DEFAULT_EVENT_DATE_FORMAT = "";
-
+  private final CurrencyConfigurationManager configurationManager;
   private final SimpleDateFormat pricingEventDateFormat;
 
-
-  public FxPricingMessageParserImpl(@Value("${message.datetime.format:dd-MM-yyyy HH:mm:ss:SSS}") String dateFormat) {
+  public FxPricingMessageParserImpl(@Value("${message.datetime.format:dd-MM-yyyy HH:mm:ss:SSS}") String dateFormat,
+      CurrencyConfigurationManager manager) {
     pricingEventDateFormat = new SimpleDateFormat(dateFormat);
+    configurationManager = manager;
   }
 
   @Override public List<Pricing> parse(String message) {
@@ -30,6 +30,7 @@ public class FxPricingMessageParserImpl implements FxPricingMessageParser {
         .map(this::parseSingleLine)
         .filter(Optional::isPresent)
         .map(Optional::get)
+        .filter(pricing -> configurationManager.isSupported(pricing.pair()))
         .toList();
   }
 
