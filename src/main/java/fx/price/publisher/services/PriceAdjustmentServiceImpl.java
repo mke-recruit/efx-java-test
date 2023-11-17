@@ -1,5 +1,6 @@
 package fx.price.publisher.services;
 
+import fx.price.publisher.domain.interfaces.CurrencyConfigurationManager;
 import fx.price.publisher.domain.model.Pricing;
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -4,10 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 
+import fx.price.publisher.domain.interfaces.CurrencyConfigurationManager;
 import fx.price.publisher.domain.model.CurrencyPair;
-import fx.price.publisher.domain.model.Pricing;
-import java.math.BigDecimal;
-import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

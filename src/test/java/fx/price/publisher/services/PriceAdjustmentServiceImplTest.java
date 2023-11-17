@@ -18,7 +18,7 @@ class PriceAdjustmentServiceImplTest {
   private static final CurrencyPair EUR_USD = CurrencyPair.ofName("EUR/USD");
 
   @Mock
-  CurrencyConfigurationManager configurationManager;
+  CurrencyConfigurationManagerImpl configurationManager;
 
   @InjectMocks
   PriceAdjustmentServiceImpl underTest;

@@ -1,0 +1,13 @@
+logging:
+  level:
+    fx.price.publisher: DEBUG
+
+pricing:
+  config:
+    currencyPairs:
+      - pairName: EUR/USD
+        scale: 4
+      - pairName: GBP/USD
+        scale: 4
+      - pairName: EUR/JPY
+        scale: 2

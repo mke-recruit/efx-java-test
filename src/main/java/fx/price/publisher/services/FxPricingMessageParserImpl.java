@@ -1,5 +1,6 @@
 package fx.price.publisher.services;
 
+import fx.price.publisher.domain.interfaces.CurrencyConfigurationManager;
 import fx.price.publisher.domain.interfaces.FxPricingMessageParser;
 import fx.price.publisher.domain.model.CurrencyPair;
 import fx.price.publisher.domain.model.Pricing;
